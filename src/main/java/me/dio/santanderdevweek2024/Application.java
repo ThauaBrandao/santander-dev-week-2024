@@ -2,13 +2,14 @@ package me.dio.santanderdevweek2024;
 
 import me.dio.santanderdevweek2024.application.AskChampionsUseCase;
 import me.dio.santanderdevweek2024.application.ListChampionsUseCase;
-import me.dio.santanderdevweek2024.domain.model.ports.ChampionsRepository;
+import me.dio.santanderdevweek2024.domain.ports.ChampionsRepository;
+import me.dio.santanderdevweek2024.domain.ports.GenerativeAiService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
 
-import java.util.List;
-
+@EnableFeignClients
 @SpringBootApplication
 public class Application {
 
@@ -19,7 +20,8 @@ public class Application {
 		return new ListChampionsUseCase(repository);
 	}
 	@Bean
-	public AskChampionsUseCase provideAskChampionUseCase(ChampionsRepository repository){
-		return new AskChampionsUseCase(repository);
+	public AskChampionsUseCase provideAskChampionUseCase(ChampionsRepository repository,
+														 GenerativeAiService genAiService){
+		return new AskChampionsUseCase(repository, genAiService);
 	}
 }

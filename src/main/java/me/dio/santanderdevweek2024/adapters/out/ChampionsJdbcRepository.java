@@ -1,8 +1,7 @@
 package me.dio.santanderdevweek2024.adapters.out;
 
 import me.dio.santanderdevweek2024.domain.model.Champions;
-import me.dio.santanderdevweek2024.domain.model.ports.ChampionsRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import me.dio.santanderdevweek2024.domain.ports.ChampionsRepository;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;

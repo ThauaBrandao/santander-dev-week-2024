@@ -1,4 +1,4 @@
-package me.dio.santanderdevweek2024.domain.model.ports;
+package me.dio.santanderdevweek2024.domain.ports;
 
 import me.dio.santanderdevweek2024.domain.model.Champions;
 
